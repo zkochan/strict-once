@@ -1,0 +1,44 @@
+{
+  "name": "strict-once",
+  "version": "0.1.0",
+  "description": "Run a function exactly one time. Otherwise, throw an exception.",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/{**/,/}*.js",
+    "coverage": "istanbul cover _mocha test/{**/,/}*.js -- -R spec",
+    "precoveralls": "istanbul cover _mocha test/{**/,/}*.js --report lcovonly -- -R spec && npm i coveralls@2",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "postcoveralls": "rm -rf ./coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zkochan/strict-once"
+  },
+  "keywords": [
+    "single",
+    "one",
+    "function",
+    "once"
+  ],
+  "author": {
+    "name": "Zoltan Kochan",
+    "email": "zoltan.kochan@gmail.com",
+    "url": "http://kochan.io"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zkochan/strict-once/issues"
+  },
+  "homepage": "https://github.com/zkochan/strict-once#readme",
+  "dependencies": {
+    "wrappy": "^1.0.1"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.3.4"
+  }
+}
